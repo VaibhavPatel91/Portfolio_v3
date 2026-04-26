@@ -39,17 +39,17 @@ export default function StatsBanner() {
       <div ref={statsRef} className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12">
 
         <div className="flex flex-col items-center justify-center text-center">
-          <span className="stat-number font-display text-[58px] leading-[86px] font-[700] tracking-tight mb-2" data-value="20" data-suffix="+">20+</span>
+          <span className="stat-number font-display text-[58px] leading-[86px] font-[700] tracking-tight mb-2" data-value="20" data-suffix="+">3+</span>
           <p className="font-mono text-[13px] leading-[20px] font-[400] uppercase tracking-[0.2em] opacity-80">Years Experience</p>
         </div>
 
         <div className="flex flex-col items-center justify-center text-center">
-          <span className="stat-number font-display text-[58px] leading-[86px] font-[700] tracking-tight mb-2" data-value="6" data-suffix="">6</span>
+          <span className="stat-number font-display text-[58px] leading-[86px] font-[700] tracking-tight mb-2" data-value="6" data-suffix="">3</span>
           <p className="font-mono text-[13px] leading-[20px] font-[400] uppercase tracking-[0.2em] opacity-80">Major Brands</p>
         </div>
 
         <div className="flex flex-col items-center justify-center text-center">
-          <span className="stat-number font-display text-[58px] leading-[86px] font-[700] tracking-tight mb-2" data-value="50" data-suffix="+">50+</span>
+          <span className="stat-number font-display text-[58px] leading-[86px] font-[700] tracking-tight mb-2" data-value="50" data-suffix="+">10+</span>
           <p className="font-mono text-[13px] leading-[20px] font-[400] uppercase tracking-[0.2em] opacity-80">Products Shipped</p>
         </div>
 

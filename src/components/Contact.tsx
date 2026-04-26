@@ -88,10 +88,9 @@ export default function Contact() {
   }
 
   const socialLinks = [
-    { label: "LINKEDIN", href: "https://linkedin.com/in/vaibhav-kansagara" },
-    { label: "GITHUB", href: "https://github.com/vaibhav-dev-91" },
-    { label: "PORTFOLIO", href: "https://vaibhav-dev-91.vercel.app" },
-    { label: "TWITTER", href: "https://twitter.com/vaibhav_dev_91" },
+    { label: "LINKEDIN", href: "https://www.linkedin.com/in/vaibhav-patel-209a22277/" },
+    { label: "GITHUB", href: "https://github.com/VaibhavPatel91" },
+    { label: "X / TWITTER", href: "https://x.com/VaibhavPatel_91" },
   ]
 
   return (

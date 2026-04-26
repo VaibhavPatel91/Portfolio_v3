@@ -14,7 +14,7 @@ export default function AboutPage() {
   }, [])
 
   return (
-    <main className="bg-[#0A0A0A] min-h-screen selection:bg-[#C8A96E]/30 text-[#F0EDE6] overflow-x-hidden">
+    <main className="bg-[#0A0A0A] min-h-screen selection:bg-[#C8A96E]/30 text-[#F0EDE6] overflow-x-hidden pt-20 md:pt-32">
       <Navbar />
 
       <div className="w-full flex flex-col min-h-screen relative">

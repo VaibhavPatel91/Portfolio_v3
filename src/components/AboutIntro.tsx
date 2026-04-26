@@ -28,18 +28,20 @@ export default function AboutIntro() {
       })
 
       if (isDesktop) {
-        // Parallax images
+        // Parallax images with different intensities (Mimicking Andrew Reff's scattered drift)
         gsap.to(".parallax-img-1", {
-          y: -150,
+          y: -250,
+          rotate: 5,
           scrollTrigger: {
             trigger: containerRef.current,
             start: "top bottom",
             end: "bottom top",
-            scrub: 1.2
+            scrub: 1.5
           }
         })
         gsap.to(".parallax-img-2", {
-          y: -50,
+          y: -120,
+          rotate: -8,
           scrollTrigger: {
             trigger: containerRef.current,
             start: "top bottom",
@@ -48,21 +50,66 @@ export default function AboutIntro() {
           }
         })
         gsap.to(".parallax-img-3", {
-          y: -200,
+          y: -350,
+          rotate: 3,
           scrollTrigger: {
             trigger: containerRef.current,
             start: "top bottom",
             end: "bottom top",
-            scrub: 1.5
+            scrub: 2
           }
         })
         gsap.to(".parallax-img-4", {
-          y: -100,
+          y: -180,
+          rotate: -2,
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1.2
+          }
+        })
+        gsap.to(".parallax-img-5", {
+          y: -400,
+          rotate: -5,
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1.8
+          }
+        })
+        gsap.to(".parallax-img-6", {
+          y: -150,
+          rotate: 10,
           scrollTrigger: {
             trigger: containerRef.current,
             start: "top bottom",
             end: "bottom top",
             scrub: 1
+          }
+        })
+        gsap.to(".parallax-img-9", {
+          y: -320,
+          rotate: -3,
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1.6
+          }
+        })
+
+        // Reveal images on entry with a slight stagger
+        gsap.from([".parallax-img-1", ".parallax-img-2", ".parallax-img-3", ".parallax-img-4", ".parallax-img-5", ".parallax-img-6", ".parallax-img-9"], {
+          y: 60,
+          opacity: 0,
+          duration: 1.2,
+          stagger: 0.05,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top 80%",
           }
         })
       }
@@ -72,19 +119,18 @@ export default function AboutIntro() {
   }, [])
 
   return (
-    <section ref={containerRef} className="py-20 lg:py-32 relative z-10 w-full flex flex-col lg:flex-row gap-16 lg:gap-24 items-start">
+    <section ref={containerRef} className="pt-10 pb-5 lg:pt-24 lg:pb-4 relative z-10 w-full flex flex-col lg:flex-row gap-16 lg:gap-24 items-start overflow-visible">
       {/* Left Column (Text Content) */}
       <div className="w-full lg:w-[50%] space-y-24">
 
-        {/* Massive Title */}
-        <h1 className="text-[clamp(5rem,10vw,8rem)] leading-[0.85] font-display font-bold text-[#F0EDE6] tracking-tighter uppercase whitespace-normal">
-          <div className="overflow-hidden pb-4"><span className="block reveal-text">ABOUT</span></div>
+        <h1 className="text-[115px] leading-[98px] font-display font-bold text-[#F0EDE6] tracking-tighter uppercase whitespace-normal">
+          <div className="overflow-hidden pb-4"><span className="block reveal-text font-display">ABOUT</span></div>
         </h1>
 
         {/* Section 1 */}
         <div className="space-y-8">
           <div className="flex flex-col gap-6">
-            <span className="font-mono text-[10px] md:text-[11px] tracking-[0.2em] text-[#C7F284] uppercase font-bold reveal-text">
+            <span className="font-mono text-[13px] tracking-[0.2em] text-[#C7F284] uppercase font-normal reveal-text">
               01 / WHAT I DO
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-[#F0EDE6] leading-[1.1] tracking-tight reveal-text max-w-lg">
@@ -119,7 +165,7 @@ export default function AboutIntro() {
         {/* Section 2 */}
         <div className="space-y-8">
           <div className="flex flex-col gap-6">
-            <span className="font-mono text-[10px] md:text-[11px] tracking-[0.2em] text-[#C7F284] uppercase font-bold reveal-text">
+            <span className="font-mono text-[13px] tracking-[0.2em] text-[#C7F284] uppercase font-normal reveal-text">
               02 / OFF THE SCREEN
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-[#F0EDE6] leading-[1.1] tracking-tight reveal-text max-w-lg">
@@ -152,49 +198,55 @@ export default function AboutIntro() {
         </div>
       </div>
 
-      {/* Right Column (Image Stack Parallax) */}
-      <div className="w-full lg:w-[50%] relative mt-24 lg:mt-0 lg:self-stretch">
-        <div className="relative lg:absolute lg:top-[5%] lg:right-[5%] w-[80%] md:w-[60%] lg:w-[65%] aspect-[4/5] z-10 parallax-img-1 group lg:rotate-2 mx-auto lg:mx-0 mb-16 lg:mb-0 shadow-2xl">
-          <div className="relative w-full h-full overflow-hidden rounded-[4px]">
-            <Image
-              src="/images/about/1.png"
-              alt="Profile 1"
-              fill
-              className="object-cover grayscale hover:grayscale-0 transition-all duration-700 pointer-events-auto"
-            />
+      {/* Right Column (Zig-Zag Connected Gallery - Interlocking Corner Kiss) */}
+      <div className="w-full lg:w-[50%] flex flex-col mt-24 lg:mt-0 lg:pt-48 px-4 md:px-8 lg:px-0">
+
+        {/* 1. Left - Tilted */}
+        <div className="relative w-[85%] md:w-[70%] lg:w-[52%] aspect-[3/4] z-10 parallax-img-1 group shadow-[0_40px_80px_rgba(0,0,0,0.7)] rotate-[-8deg] self-start lg:ml-[5%]">
+          <div className="relative w-full h-full overflow-hidden rounded-[16px] lg:rounded-[32px] border border-white/10">
+            <Image src="/images/about/1.png" alt="Vaibhav" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-1000 ease-out scale-110 group-hover:scale-100" />
           </div>
         </div>
 
-        <div className="relative lg:absolute lg:top-[28%] lg:left-[0%] w-[75%] md:w-[55%] lg:w-[60%] aspect-square z-20 parallax-img-2 group shadow-2xl lg:-rotate-2 mx-auto lg:mx-0 mb-16 lg:mb-0">
-          <div className="relative w-full h-full overflow-hidden rounded-[4px]">
-            <Image
-              src="/images/about/5.png"
-              alt="Profile 2"
-              fill
-              className="object-cover grayscale hover:grayscale-0 transition-all duration-700 pointer-events-auto"
-            />
+        {/* 2. Right - Tilted (Connected Kiss) */}
+        <div className="relative w-[85%] md:w-[70%] lg:w-[52%] aspect-[3/4] z-20 parallax-img-2 group shadow-[0_40px_80px_rgba(0,0,0,0.7)] rotate-[8deg] self-end lg:mr-[5%] mt-[-10%] md:mt-[-8%] lg:mt-[-10%]">
+          <div className="relative w-full h-full overflow-hidden rounded-[16px] lg:rounded-[32px] border border-white/10">
+            <Image src="/images/about/5.png" alt="Vaibhav" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-1000 ease-out scale-110 group-hover:scale-100" />
           </div>
         </div>
 
-        <div className="relative lg:absolute lg:top-[55%] lg:right-[0%] w-[85%] md:w-[65%] lg:w-[70%] aspect-[4/5] z-30 parallax-img-3 group shadow-2xl lg:rotate-3 mx-auto lg:mx-0 mb-16 lg:mb-0">
-          <div className="relative w-full h-full overflow-hidden rounded-[4px]">
-            <Image
-              src="/images/about/profile-3.png"
-              alt="Profile 3"
-              fill
-              className="object-cover grayscale hover:grayscale-0 transition-all duration-700 pointer-events-auto"
-            />
+        {/* 3. Left - Tilted (Connected Kiss) */}
+        <div className="relative w-[85%] md:w-[70%] lg:w-[52%] aspect-[3/4] z-30 parallax-img-3 group shadow-[0_40px_80px_rgba(0,0,0,0.7)] rotate-[-8deg] self-start lg:ml-[2%] mt-[-10%] md:mt-[-8%] lg:mt-[-10%]">
+          <div className="relative w-full h-full overflow-hidden rounded-[16px] lg:rounded-[32px] border border-white/10">
+            <Image src="/images/about/profile-3.png" alt="Vaibhav" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-1000 ease-out scale-110 group-hover:scale-100" />
           </div>
         </div>
 
-        <div className="relative lg:absolute lg:top-[78%] lg:left-[5%] w-[80%] md:w-[60%] lg:w-[60%] aspect-[3/4] z-40 parallax-img-4 group shadow-2xl lg:-rotate-1 mx-auto lg:mx-0">
-          <div className="relative w-full h-full overflow-hidden rounded-[4px]">
-            <Image
-              src="/images/about/profile-4.png"
-              alt="Profile 4"
-              fill
-              className="object-cover grayscale hover:grayscale-0 transition-all duration-700 pointer-events-auto"
-            />
+        {/* 4. Right - Tilted (Connected Kiss) */}
+        <div className="relative w-[85%] md:w-[70%] lg:w-[52%] aspect-[3/4] z-40 parallax-img-4 group shadow-[0_40px_80px_rgba(0,0,0,0.7)] rotate-[8deg] self-end lg:mr-[2%] mt-[-10%] md:mt-[-8%] lg:mt-[-10%]">
+          <div className="relative w-full h-full overflow-hidden rounded-[16px] lg:rounded-[32px] border border-white/10">
+            <Image src="/images/about/profile-4.png" alt="Vaibhav" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-1000 ease-out scale-110 group-hover:scale-100" />
+          </div>
+        </div>
+
+        {/* 5. Left - Tilted (Connected Kiss) */}
+        <div className="relative w-[85%] md:w-[70%] lg:w-[52%] aspect-[3/4] z-10 parallax-img-5 group shadow-[0_40px_80px_rgba(0,0,0,0.7)] rotate-[-8deg] self-start lg:ml-[8%] mt-[-10%] md:mt-[-8%] lg:mt-[-10%]">
+          <div className="relative w-full h-full overflow-hidden rounded-[16px] lg:rounded-[32px] border border-white/10">
+            <Image src="/images/about/2.png" alt="Vaibhav" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-1000 ease-out scale-110 group-hover:scale-100" />
+          </div>
+        </div>
+
+        {/* 6. Right - Tilted (Connected Kiss) */}
+        <div className="relative w-[85%] md:w-[70%] lg:w-[52%] aspect-[3/4] z-20 parallax-img-6 group shadow-[0_40px_80px_rgba(0,0,0,0.7)] rotate-[8deg] self-end lg:mr-[8%] mt-[-10%] md:mt-[-8%] lg:mt-[-10%]">
+          <div className="relative w-full h-full overflow-hidden rounded-[16px] lg:rounded-[32px] border border-white/10">
+            <Image src="/images/about/3.png" alt="Vaibhav" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-1000 ease-out scale-110 group-hover:scale-100" />
+          </div>
+        </div>
+
+        {/* 7. Left - Tilted (Connected Kiss) */}
+        <div className="relative w-[85%] md:w-[70%] lg:w-[52%] aspect-[3/4] z-30 parallax-img-9 group shadow-[0_40px_80px_rgba(0,0,0,0.7)] rotate-[-8deg] self-start lg:ml-[5%] mt-[-10%] md:mt-[-8%] lg:mt-[-10%]">
+          <div className="relative w-full h-full overflow-hidden rounded-[16px] lg:rounded-[32px] border border-white/10">
+            <Image src="/images/about/cric2.png" alt="Vaibhav" fill className="object-cover grayscale hover:grayscale-0 transition-all duration-1000 ease-out scale-110 group-hover:scale-100" />
           </div>
         </div>
       </div>
