@@ -32,23 +32,25 @@ export default function StatsBanner() {
     return () => ctx.revert()
   }, [])
 
+  // bgcolors options - #E2FF9C, #C7F284
+
   return (
-    <section className="w-full bg-[#C7F284] py-20 px-6 md:px-12 text-[#0A0A0A] my-20 lg:my-32">
-      <div ref={statsRef} className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left divide-y md:divide-y-0 md:divide-x divide-[#0A0A0A]/20">
+    <section className="w-full bg-[#C7F284] py-24 px-6 md:px-12 text-[#000000] my-20 lg:my-32">
+      <div ref={statsRef} className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12">
 
-        <div className="space-y-4 pt-12 md:pt-0 pb-12 md:pb-0 md:pr-12 md:pl-0 flex flex-col justify-center items-center md:items-start text-center md:text-left">
-          <span className="stat-number font-display font-bold text-7xl lg:text-8xl tracking-tighter leading-none" data-value="3" data-suffix="+">3+</span>
-          <p className="font-mono text-[12px] uppercase tracking-[0.1em] font-bold">Years Experience</p>
+        <div className="flex flex-col items-center justify-center text-center">
+          <span className="stat-number font-display text-[58px] leading-[86px] font-[700] tracking-tight mb-2" data-value="20" data-suffix="+">20+</span>
+          <p className="font-mono text-[13px] leading-[20px] font-[400] uppercase tracking-[0.2em] opacity-80">Years Experience</p>
         </div>
 
-        <div className="space-y-4 pt-12 md:pt-0 pb-12 md:pb-0 md:px-12 flex flex-col justify-center items-center md:items-start text-center md:text-left">
-          <span className="stat-number font-display font-bold text-7xl lg:text-8xl tracking-tighter leading-none" data-value="6" data-suffix="">6</span>
-          <p className="font-mono text-[12px] uppercase tracking-[0.1em] font-bold">Production Apps Shipped</p>
+        <div className="flex flex-col items-center justify-center text-center">
+          <span className="stat-number font-display text-[58px] leading-[86px] font-[700] tracking-tight mb-2" data-value="6" data-suffix="">6</span>
+          <p className="font-mono text-[13px] leading-[20px] font-[400] uppercase tracking-[0.2em] opacity-80">Major Brands</p>
         </div>
 
-        <div className="space-y-4 pt-12 md:pt-0 pb-12 md:pb-0 md:pl-12 flex flex-col justify-center items-center md:items-start text-center md:text-left">
-          <span className="stat-number font-display font-bold text-7xl lg:text-8xl tracking-tighter leading-none" data-value="4000" data-suffix="+">4000+</span>
-          <p className="font-mono text-[12px] uppercase tracking-[0.1em] font-bold">Active Platform Users</p>
+        <div className="flex flex-col items-center justify-center text-center">
+          <span className="stat-number font-display text-[58px] leading-[86px] font-[700] tracking-tight mb-2" data-value="50" data-suffix="+">50+</span>
+          <p className="font-mono text-[13px] leading-[20px] font-[400] uppercase tracking-[0.2em] opacity-80">Products Shipped</p>
         </div>
 
       </div>
