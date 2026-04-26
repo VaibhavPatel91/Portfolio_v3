@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0A0A0A;
+  --surface: #111111;
+  --foreground: #F0EDE6;
+  --accent: #C8A96E;
+  --cream: #E8E0D0;
+  --muted: #555550;
+  --border: #1C1C1A;
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-primary: var(--foreground);
+  --color-accent: var(--accent);
+  --color-cream: var(--cream);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+
+  --font-display: var(--font-space), sans-serif;
+  --font-body: var(--font-dm-sans), sans-serif;
+  --font-mono: var(--font-dm-mono), monospace;
+  --font-accent: var(--font-bebas), sans-serif;
+
+  --animate-spin-slow: spin 8s linear infinite;
+
+}
+
+@layer utilities {
+  .text-hollow {
+    -webkit-text-stroke: 1.5px #F0EDE6;
+    color: transparent;
+  }
+
+  .dot-grid {
+    background-image: radial-gradient(circle, #1C1C1A 1px, transparent 1px);
+    background-size: 30px 30px;
+  }
+
+  .fade-in {
+    animation: fadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      filter: blur(8px);
+    }
+    to {
+      opacity: 1;
+      filter: blur(0px);
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border cursor-none;
+  }
+  
+  html {
+     @apply bg-background text-primary scroll-smooth;
+     font-size: 110%; /* 17.6px base */
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    @apply antialiased selection:bg-accent/30 selection:text-white font-body;
+    font-family: var(--font-dm-sans), sans-serif;
+    font-weight: 300;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-space), sans-serif;
+    @apply font-bold tracking-tight;
+  }
+
+  p {
+    @apply font-body font-light;
+    font-size: 1.125rem;
+    line-height: 1.6;
+    font-family: var(--font-dm-sans), sans-serif;
+  }
+
+  label, span {
+    font-family: var(--font-dm-mono), monospace;
+    @apply font-mono;
+  }
+
+  a, button {
+    @apply transition-colors cursor-none;
+  }
+
+  .font-accent {
+    font-family: var(--font-bebas), sans-serif;
+  }
+}
+
+/* Lenis CSS */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Custom Cursor default hide */
+svg {
+  pointer-events: none;
+}
