@@ -78,9 +78,9 @@ export default function CaseStudyContent({ project, nextProject }: Props) {
         </div>
 
         {/* Main Content Grid */}
-        <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-32 pb-32 border-b border-[#1C1C1A]">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 pb-32 border-b border-[#1C1C1A]">
           {/* Meta Sidebar */}
-          <div className="lg:col-span-4 space-y-16">
+          <div className="lg:col-span-4 space-y-16 min-w-0">
             <div className="reveal-text space-y-4 border-t border-[#1C1C1A] pt-8">
               <p className="font-mono text-[10px] tracking-[0.2em] text-[#555550] uppercase">Role</p>
               <p className="font-display text-xl text-[#F0EDE6] tracking-tight">Lead Developer</p>
@@ -125,10 +125,10 @@ export default function CaseStudyContent({ project, nextProject }: Props) {
           </div>
 
           {/* Story */}
-          <div className="lg:col-span-8 space-y-24">
+          <div className="lg:col-span-8 space-y-24 min-w-0">
             <div className="reveal-text space-y-8">
               <h3 className="font-mono text-[11px] tracking-[0.2em] text-[#C8A96E] uppercase">Overview</h3>
-              <p className="font-body font-light text-[20px] md:text-[24px] leading-[1.6] text-[#F0EDE6]/90">
+              <p className="font-body font-light text-[20px] md:text-[24px] leading-[1.6] text-[#F0EDE6]/90 break-words">
                 {project.desc}
               </p>
             </div>
@@ -145,9 +145,9 @@ export default function CaseStudyContent({ project, nextProject }: Props) {
               </ul>
             </div>
 
-            <div className="reveal-text space-y-8 bg-[#111111]/40 border border-[#1C1C1A] p-8 md:p-16">
+            <div className="reveal-text space-y-8 bg-[#111111]/40 border border-[#1C1C1A] p-8 md:p-12 lg:p-16">
               <h3 className="font-mono text-[11px] tracking-[0.2em] text-[#C8A96E] uppercase mb-4">Business Impact</h3>
-              <p className="font-display font-medium italic text-[24px] md:text-[36px] leading-[1.4] text-[#F0EDE6] tracking-tight">
+              <p className="font-display font-medium italic text-[24px] md:text-[32px] lg:text-[36px] leading-[1.4] text-[#F0EDE6] tracking-tight break-words">
                 "{project.businessImpact}"
               </p>
             </div>
