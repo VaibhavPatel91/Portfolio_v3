@@ -91,6 +91,7 @@ export default function Contact() {
     { label: "LINKEDIN", href: "https://www.linkedin.com/in/vaibhav-patel-209a22277/" },
     { label: "GITHUB", href: "https://github.com/VaibhavPatel91" },
     { label: "X / TWITTER", href: "https://x.com/VaibhavPatel_91" },
+    { label: "CIRCA '21", href: "https://vaibhav-91.vercel.app/" },
   ]
 
   return (
