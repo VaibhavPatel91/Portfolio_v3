@@ -123,7 +123,7 @@ export default function AboutIntro() {
       {/* Left Column (Text Content) */}
       <div className="w-full lg:w-[50%] space-y-24">
 
-        <h1 className="text-[115px] leading-[98px] font-display font-bold text-[#F0EDE6] tracking-tighter uppercase whitespace-normal">
+        <h1 className="text-[53px] lg:text-[115px] leading-[53px] lg:leading-[98px] font-display font-bold text-[#F0EDE6] tracking-tighter uppercase whitespace-normal">
           <div className="overflow-hidden pb-4"><span className="block reveal-text font-display">ABOUT</span></div>
         </h1>
 

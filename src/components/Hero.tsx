@@ -66,7 +66,7 @@ export default function Hero() {
 
       <div className="relative z-10 w-full max-w-7xl flex flex-col items-center hero-content-inner">
         {/* Top Editorial Label */}
-        <div className="mb-8 md:mb-12 flex flex-col items-center">
+        <div className="mb-8 md:mb-12 hidden md:flex flex-col items-center">
           <p className="font-mono text-[12px] font-bold tracking-[4px] text-[#F0EDE6]/50 uppercase select-none cursor-default">
             NAVIGATING THE UNKNOWN, PIXEL BY PIXEL.
           </p>
@@ -78,7 +78,7 @@ export default function Hero() {
             <h1
               id="hero-headline-1"
               ref={headline1Ref}
-              className="text-[10vw] font-display font-bold leading-[0.8] tracking-[-0.05em] text-[#F0EDE6] text-center uppercase cursor-grab active:cursor-grabbing will-change-transform peer"
+              className="text-[15vw] md:text-[10vw] font-display font-bold leading-[0.8] tracking-[-0.05em] text-[#F0EDE6] text-center uppercase cursor-grab active:cursor-grabbing will-change-transform peer"
             >
               VAIBHAV
             </h1>
@@ -97,7 +97,7 @@ export default function Hero() {
             <h1
               id="hero-headline-2"
               ref={headline2Ref}
-              className="text-[10vw] font-display font-bold leading-[0.8] tracking-[-0.05em] text-hollow text-center uppercase cursor-grab active:cursor-grabbing will-change-transform peer"
+              className="text-[15vw] md:text-[10vw] font-display font-bold leading-[0.8] tracking-[-0.05em] text-hollow text-center uppercase cursor-grab active:cursor-grabbing will-change-transform peer"
             >
               KANSAGARA
             </h1>

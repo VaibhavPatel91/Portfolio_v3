@@ -23,8 +23,12 @@ export function SmoothScrollProvider({ children }: { children: React.ReactNode }
 
     gsap.ticker.lagSmoothing(0)
 
+    const handleContextMenu = (e: MouseEvent) => e.preventDefault()
+    document.addEventListener('contextmenu', handleContextMenu)
+
     // Cleanup
     return () => {
+      document.removeEventListener('contextmenu', handleContextMenu)
       lenis.destroy()
       window.scrollTo(0, 0)
     }
