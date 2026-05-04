@@ -32,9 +32,9 @@ export const metadata: Metadata = {
   title: 'Vaibhav Kansagara | Front-End Software Engineer',
   description: 'Front-End Software Engineer specializing in building immersive, production-grade web applications with React, Next.js, and GSAP.',
   icons: {
-    icon: '/Logo.png',
-    shortcut: '/Logo.png',
-    apple: '/Logo.png',
+    icon: '/Logo1.png',
+    shortcut: '/Logo1.png',
+    apple: '/Logo1.png',
   },
 }
 
