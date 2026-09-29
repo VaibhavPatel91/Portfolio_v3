@@ -296,4 +296,54 @@ export const projects: Project[] = [
       { label: "CRM Panel", url: "https://admin.icebit.in" },
     ],
   },
+  {
+    id: "10",
+    slug: "whatsflow-whatsapp-scheduler",
+    name: "WhatsFlow — WhatsApp Scheduler",
+    tags: ["Next.js", "Express", "Playwright", "SQLite", "TypeScript"],
+    desc: "Designed and built an open-source WhatsApp message scheduler and automation studio that runs entirely on the user's own machine. Users schedule messages to any WhatsApp group through a web dashboard, and a background worker delivers them at the exact time using browser automation, with no official Business API and no cloud dependency.",
+    type: "Open Source · Automation Tool",
+    imgMain: "/projects/wta.jpg",
+    imgSub: "/projects/whatsflow_sub.jpg",
+    metrics: [
+      { label: "SCHEDULING MODES", value: "3" },
+      { label: "DATA SENT TO CLOUD", value: "0" },
+    ],
+    tagline:
+      "A private, local-first studio for scheduling WhatsApp group messages reliably and safely.",
+    features: [
+      "Three scheduling modes: date range, single date, and daily recurring",
+      "Playwright-powered dispatch engine that opens Chromium only when a message is due and closes it right after sending",
+      "Chat header verification before every send to prevent messages going to the wrong group",
+      "Idempotency keys that guarantee no duplicate sends, even after a worker restart",
+      "Live dashboard with WhatsApp Web session status, network status, and today's dispatch timeline",
+      "Task manager with search, status filters, and inline enable, disable, edit, and delete actions",
+      "Dispatch history and audit logs with scheduled time, actual sent time, and failure traces",
+      "Persistent local WhatsApp session, so the QR code only needs to be scanned once",
+    ],
+    businessImpact:
+      "Removes the need to remember recurring group announcements, reminders, and updates by automating them at the exact time required. Because the app runs locally without third-party services, session data stays private and there are no API or subscription costs. The modular architecture (dashboard, API, worker, shared library) keeps the system easy to extend and maintain.",
+    techStack:
+      "Next.js 14 · React 18 · Tailwind CSS · Node.js · Express · TypeScript · Zod · Playwright · SQLite (better-sqlite3) · Luxon",
+    // liveLink: [
+    //   {
+    //     label: "GitHub Repository",
+    //     url: "https://github.com/VaibhavPatel91/whatsflow-whatsapp-scheduler",
+    //   },
+    // ],
+    liveLink: [
+      {
+        label: "GitHub Repository",
+        url: "https://github.com/VaibhavPatel91/whatsflow-whatsapp-scheduler",
+      },
+      {
+        label: "UI/UX Designer Wanted (Issue #1)",
+        url: "https://github.com/VaibhavPatel91/whatsflow-whatsapp-scheduler/issues/1",
+      },
+      {
+        label: "Community Feature Ideas (Issue #2)",
+        url: "https://github.com/VaibhavPatel91/whatsflow-whatsapp-scheduler/issues/2",
+      },
+    ],
+  },
 ];
